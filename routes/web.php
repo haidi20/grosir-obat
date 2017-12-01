@@ -11,6 +11,8 @@
 |
 */
 
+//haidi
+
 Route::get('/', function () {
     return redirect()->route('login');
 });
