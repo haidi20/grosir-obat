@@ -14,7 +14,7 @@ class AfterProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->unsegnedInteger('stock')->default(0);
+            $table->unsignedInteger('stock')->default(0);
         });
     }
 
