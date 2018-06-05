@@ -26,7 +26,7 @@ return [
     'updated'        => 'Update data Produk telah berhasil.',
     'delete'         => 'Hapus Produk',
     'delete_confirm' => 'Anda yakin akan menghapus Produk ini?',
-    'deleted'        => 'Hapus data Produk telah berhasill.',
+    'deleted'        => 'Hapus data Produk telah berhasil.',
     'undeleted'      => 'Data Produk gagal dihapus.',
     'undeleteable'   => 'Data Produk tidak dapat dihapus.',
 
