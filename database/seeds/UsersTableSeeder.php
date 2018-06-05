@@ -12,9 +12,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class)->create([
-            'name'     => 'Administrator',
-            'username' => 'admin',
+        DB::table('users')->insert([
+          'username'  => 'admin',
+          'name'      => 'admin',
+          'password'  => bcrypt('admin')
         ]);
     }
 }
