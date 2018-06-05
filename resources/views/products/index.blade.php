@@ -30,8 +30,8 @@
                         <th>{{ __('product.unit') }}</th>
                         <th class="text-right">{{ __('product.cash_price') }}</th>
                         <th class="text-right">{{ __('product.credit_price') }}</th>
-                        <th class="text-center">{{ __('app.action') }}</th>
                         <th class="text-center">{{ __('product.stock')}}</th>
+                        <th class="text-center">{{ __('app.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,6 +43,7 @@
                         <td>{{ $product->unit->name }}</td>
                         <td class="text-right">{{ formatRp($product->cash_price) }}</td>
                         <td class="text-right">{{ formatRp($product->credit_price) }}</td>
+                        <td class="text-center">{{$product->stock}}</td>
                         <td class="text-center">
                             {!! link_to_route('products.index', __('app.edit'), ['action' => 'edit', 'id' => $product->id] + request(['page','q']), ['id' => 'edit-product-' . $product->id]) !!} |
                             {!! link_to_route('products.index', __('app.delete'), ['action' => 'delete', 'id' => $product->id] + request(['page','q']), ['id' => 'del-product-' . $product->id]) !!}

@@ -50,6 +50,7 @@ class ProductsController extends Controller
             'cash_price'   => 'required|numeric',
             'credit_price' => 'nullable|numeric',
             'unit_id'      => 'required|numeric|exists:product_units,id',
+            'stock'        => 'required|numeric'
         ]);
 
         $routeParam = $request->only('page', 'q');
