@@ -6,7 +6,14 @@
         <div class="col-md-6">{!! FormField::price('cash_price', ['label' => __('product.cash_price'), 'required' => true]) !!}</div>
         <div class="col-md-6">{!! FormField::price('credit_price', ['label' => __('product.credit_price')]) !!}</div>
     </div>
-    {!! FormField::select('unit_id', $unit->pluck('name','id'), ['label' => __('product.unit'), 'required' => true]) !!}
+    <div class="row">
+      <div class="col-md-6">
+        {!! FormField::select('unit_id',$unit->pluck('name','id'), ['label' => __('product.unit'), 'required' => true]) !!}
+      </div>
+      <div class="col-md-6">
+        {!! FormField::text('stock',['label' => __('product.stock'),'required' => true]) !!}
+      </div>
+    </div>
     {!! Form::submit(__('product.create'), ['class' => 'btn btn-success']) !!}
     {{ link_to_route('products.index', __('app.cancel'), [], ['class' => 'btn btn-default']) }}
     {!! Form::close() !!}
@@ -18,13 +25,20 @@
         <div class="col-md-6">{!! FormField::price('cash_price', ['label' => __('product.cash_price'), 'required' => true]) !!}</div>
         <div class="col-md-6">{!! FormField::price('credit_price', ['label' => __('product.credit_price')]) !!}</div>
     </div>
-    {!! FormField::select('unit_id', $unit->pluck('name','id'), ['label' => __('product.unit'), 'required' => true]) !!}
-    @if (request('q'))
-        {{ Form::hidden('q', request('q')) }}
-    @endif
-    @if (request('page'))
-        {{ Form::hidden('page', request('page')) }}
-    @endif
+    <div class="row">
+      <div class="col-md-6">
+        {!! FormField::select('unit_id', $unit->pluck('name','id'), ['label' => __('product.unit'), 'required' => true]) !!}
+        @if (request('q'))
+            {{ Form::hidden('q', request('q')) }}
+        @endif
+        @if (request('page'))
+            {{ Form::hidden('page', request('page')) }}
+        @endif
+      </div>
+      <div class="col-md-6">
+        {!! FormField::text('stock',['label' => __('product.stock'),'required' => true]) !!}
+      </div>
+    </div>
     {!! Form::submit(__('product.update'), ['class' => 'btn btn-success']) !!}
     {{ link_to_route('products.index', __('app.cancel'), Request::only('q'), ['class' => 'btn btn-default']) }}
     {!! Form::close() !!}

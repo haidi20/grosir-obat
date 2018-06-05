@@ -31,6 +31,7 @@
                         <th class="text-right">{{ __('product.cash_price') }}</th>
                         <th class="text-right">{{ __('product.credit_price') }}</th>
                         <th class="text-center">{{ __('app.action') }}</th>
+                        <th class="text-center">{{ __('product.stock')}}</th>
                     </tr>
                 </thead>
                 <tbody>

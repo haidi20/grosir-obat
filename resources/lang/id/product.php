@@ -34,4 +34,5 @@ return [
     'name'         => 'Nama Produk',
     'cash_price'   => 'Harga Tunai',
     'credit_price' => 'Harga Kredit',
+    'stock'        => 'Jumlah Stok',
 ];
