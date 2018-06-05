@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/nafiesl/grosir-obat.svg?branch=master)](https://travis-ci.org/nafiesl/grosir-obat)
 [![StyleCI](https://styleci.io/repos/87638082/shield?branch=master)](https://styleci.io/repos/87638082)
 
-Aplikasi Grosir Obat adalah sebuah sistem kasir dan manajemen produk obat yang dibuat menggunakan framework Laravel, dibangun dengan Test-Driven Development.
+Aplikasi Grosir Obat adalah sebuah sistem kasir (Point of Sales) dan manajemen produk obat yang dibuat menggunakan framework Laravel, dibangun dengan Test-Driven Development.
 
 <hr>
 
@@ -55,6 +55,10 @@ Fitur pada Aplikasi ini meliputi:
     - List Transaksi
     - Detail Transaksi
     - Cetak Nota (PDF; Format A4)
+6. Laporan Penjualan
+    - Penjualan Per Tahun
+    - Penjualan Per Bulan
+    - Penjualan Per Tanggal
 6. Manajemen User
     - List User
     - Input User Baru
@@ -171,11 +175,15 @@ Proses Entry transaksi baru:
 #### Daftar Produk
 ![Daftar Produk](public/imgs/04-daftar-produk.jpg "Daftar Produk")
 
+#### Laporan Penjualan Pertahun
+![Laporan Tahunan](public/imgs/06-yearly-sales.jpg "Laporan Tahunan")
+
+#### Laporan Penjualan Perbulan
+![Laporan Bulanan](public/imgs/07-monthly-sales.jpg "Laporan Bulanan")
+
 #### Testing
 ![Testing](public/imgs/05-testing.jpg "Testing")
 
+## Lisensi
 
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](LICENSE).
+Project Grosir Obat merupakan software Point of Sales yang free dan open source di bawah [lisensi MIT](LICENSE).

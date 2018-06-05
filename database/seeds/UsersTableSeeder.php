@@ -12,10 +12,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-          'username'  => 'admin',
-          'name'      => 'admin',
-          'password'  => bcrypt('admin')
+        User::create([
+            'name'           => 'Administrator',
+            'username'       => 'admin',
+            'password'       => 'secret',
+            'remember_token' => str_random(10),
         ]);
     }
 }

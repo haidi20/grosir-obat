@@ -11,12 +11,6 @@
 |
 */
 
-//haidi
-
-Route::get('/', function () {
-    return redirect()->route('login');
-});
-
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -30,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     /*
      * Pages Routes
      */
-    Route::get('/home', 'CartController@index')->name('home');
+    Route::get('/', 'CartController@index')->name('home');
 
     /*
      * Cart / Trasanction Draft Routes
@@ -70,6 +64,20 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('transactions/{transaction}', ['as' => 'transactions.show', 'uses' => 'TransactionsController@show']);
     Route::get('transactions/{transaction}/pdf', ['as' => 'transactions.pdf', 'uses' => 'TransactionsController@pdf']);
     Route::get('transactions/{transaction}/receipt', ['as' => 'transactions.receipt', 'uses' => 'TransactionsController@receipt']);
+
+    /*
+     * Reports Routes
+     */
+    Route::group(['prefix' => 'reports'], function () {
+
+        /*
+         * Sales Routes
+         */
+        Route::get('sales', ['as' => 'reports.sales.index', 'uses' => 'Reports\SalesController@monthly']);
+        Route::get('sales/daily', ['as' => 'reports.sales.daily', 'uses' => 'Reports\SalesController@daily']);
+        Route::get('sales/monthly', ['as' => 'reports.sales.monthly', 'uses' => 'Reports\SalesController@monthly']);
+        Route::get('sales/yearly', ['as' => 'reports.sales.yearly', 'uses' => 'Reports\SalesController@yearly']);
+    });
 
     /*
      * Backup Restore Database Routes
